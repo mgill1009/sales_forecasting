@@ -10,12 +10,13 @@ The notebook implements and compares models such as **XGBoost Regressor** and **
 ### **Source:**
 Synthetic or publicly available retail dataset (in CSV format).  
 If using your own data, place it under:
+```text
 data/raw/
-├── train.csv
-├── test.csv
-├── stores.csv
-└── features.csv
-
+├── train.csv       # Historical weekly sales by store and department
+├── test.csv        # Data for which predictions are to be made
+├── stores.csv      # Metadata about each store (e.g., type, size)
+└── features.csv    # Additional features like holidays, fuel prices, etc.
+```
 ### **Description**
 | File | Description |
 |------|--------------|
@@ -25,7 +26,8 @@ data/raw/
 | `stores.csv` | Metadata for each store (e.g., size, type, region) |
 
 
-## 3. Repository Structure
+## 3 Repository Structure
+```text
 │
 ├── data/
 │   ├── raw/                 # Raw data files (train/test/features/stores)
@@ -34,6 +36,7 @@ data/raw/
 ├── sales_forecasting.ipynb  # Main notebook with full analysis & model training
 ├── requirements.txt         # Dependencies (optional)
 ├── README.md                # Project documentation
+```
 
 ## 4. How to Run the Project
 ### **1. Clone the repository**
@@ -41,28 +44,29 @@ data/raw/
 git clone https://github.com/mgill1009/sales_forecasting.git
 cd sales_forecasting
 
-Run the notebook:
+# Run the notebook:
 
 jupyter notebook sales_forecasting.ipynb
+```
 
 ## 5. Key Findings and Model Performance
-	•	Feature Engineering:
-Created lagged features, rolling means, and seasonal indicators to enhance time-series prediction accuracy.
-This helped capture weekly and monthly trends in sales.
-	•	Models Evaluated:
-	•	Random Forest Regressor (baseline model)
-	•	XGBoost Regressor (optimized model)
-	•	Performance Summary:
-	•	XGBoost outperformed Random Forest, achieving lower RMSE and better generalization on unseen data.
-	•	Rolling mean of 4-week lag proved to be the most important predictor, confirming short-term seasonality in sales trends.
-	•	Visualization Highlights:
-	•	Actual vs. Predicted sales plots
-	•	Feature importance rankings
-	•	Error distribution analysis
+- Feature Engineering:
+	- Created lagged features, rolling means, and seasonal indicators to enhance time-series prediction accuracy.
+	- This helped capture weekly and monthly trends in sales.
+- Models Evaluated:
+	- Random Forest Regressor (baseline model)
+	- XGBoost Regressor (optimized model)
+- Performance Summary:
+	- XGBoost outperformed Random Forest, achieving lower RMSE and better generalization on unseen data.
+	- Rolling mean of 4-week lag proved to be the most important predictor, confirming short-term seasonality in sales trends.
+- Visualization Highlights:
+	- Actual vs. Predicted sales plots
+	- Feature importance rankings
+	- Error distribution analysis
 
 ## 6. Future Improvements
-	•	Incorporate additional exogenous variables such as promotions, competitor pricing, or macroeconomic indicators.
-	•	Implement cross-store forecasting using hierarchical models.
-	•	Experiment with deep learning approaches (e.g., LSTM, Temporal Fusion Transformer).
-	•	Automate data pipeline for continuous model retraining and dashboard integration.
+- Incorporate additional exogenous variables such as promotions, competitor pricing, or macroeconomic indicators.
+- Implement cross-store forecasting using hierarchical models.
+- Experiment with deep learning approaches (e.g., LSTM, Temporal Fusion Transformer).
+- Automate data pipeline for continuous model retraining and dashboard integration.
 
